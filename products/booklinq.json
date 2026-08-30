@@ -1,0 +1,9 @@
+{
+  "id": "booklinq",
+  "name": "BookLinq",
+  "colorId": "P02",
+  "status": "active",
+  "meaning": "booking, hospitality, confirmed time",
+  "primary": { "light": "#B45309", "dark": "#FBBF24" },
+  "mark": { "rear": "#F59E0B", "front": "#B45309" }
+}

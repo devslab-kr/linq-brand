@@ -1,0 +1,22 @@
+{
+  "name": "@devslab/linq-brand",
+  "version": "0.1.0",
+  "description": "Official public assets and registry for the DevsLab Linq product family",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "pack:check": "node scripts/pack-dry-run.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "5.3.0",
+    "fflate": "0.8.3",
+    "fontkit": "2.0.4",
+    "png-to-ico": "3.0.2",
+    "sharp": "0.35.4"
+  }
+}

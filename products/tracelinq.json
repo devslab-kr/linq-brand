@@ -1,0 +1,9 @@
+{
+  "id": "tracelinq",
+  "name": "TraceLinq",
+  "colorId": "P04",
+  "status": "active",
+  "meaning": "traces, branching, observability",
+  "primary": { "light": "#7E22CE", "dark": "#D8B4FE" },
+  "mark": { "rear": "#C084FC", "front": "#7E22CE" }
+}

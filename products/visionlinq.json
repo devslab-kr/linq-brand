@@ -1,0 +1,9 @@
+{
+  "id": "visionlinq",
+  "name": "VisionLinq",
+  "colorId": "P03",
+  "status": "active",
+  "meaning": "documents, precision, structured extraction",
+  "primary": { "light": "#1D4ED8", "dark": "#8AACF8" },
+  "mark": { "rear": "#60A5FA", "front": "#1D4ED8" }
+}

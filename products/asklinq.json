@@ -1,0 +1,9 @@
+{
+  "id": "asklinq",
+  "name": "AskLinq",
+  "colorId": "P01",
+  "status": "active",
+  "meaning": "conversation, questions, guidance",
+  "primary": { "light": "#0F766E", "dark": "#5EEAD4" },
+  "mark": { "rear": "#14B8A6", "front": "#0F766E" }
+}
