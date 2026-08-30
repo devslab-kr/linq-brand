@@ -47,6 +47,7 @@ test("creates deterministic product download archives", async () => {
 test("maps public exports only to package files", async () => {
   const packageJson = JSON.parse(await readFile(new URL("package.json", root), "utf8"));
   assert.equal(packageJson.private, undefined);
+  assert.deepEqual(packageJson.publishConfig, { access: "public" });
   assert.deepEqual(packageJson.files, ["dist", "README.md", "LICENSE", "BRAND-LICENSE.md"]);
   assert.equal(packageJson.exports["./registry"], "./dist/index.json");
   assert.equal(packageJson.exports["./tokens.css"], "./dist/tokens.css");
