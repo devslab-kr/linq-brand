@@ -18,7 +18,10 @@
       "mark-dark": "./asklinq/mark-dark.svg",
       "mark-monochrome": "./asklinq/mark-monochrome.svg",
       "mark-reversed": "./asklinq/mark-reversed.svg",
-      "favicon": "./asklinq/favicon.svg"
+      "favicon": "./asklinq/favicon.svg",
+      "wordmark": "./asklinq/wordmark.svg",
+      "lockup-horizontal": "./asklinq/lockup-horizontal.svg",
+      "lockup-stacked": "./asklinq/lockup-stacked.svg"
     }
   },
   {
@@ -40,7 +43,10 @@
       "mark-dark": "./booklinq/mark-dark.svg",
       "mark-monochrome": "./booklinq/mark-monochrome.svg",
       "mark-reversed": "./booklinq/mark-reversed.svg",
-      "favicon": "./booklinq/favicon.svg"
+      "favicon": "./booklinq/favicon.svg",
+      "wordmark": "./booklinq/wordmark.svg",
+      "lockup-horizontal": "./booklinq/lockup-horizontal.svg",
+      "lockup-stacked": "./booklinq/lockup-stacked.svg"
     }
   },
   {
@@ -62,7 +68,10 @@
       "mark-dark": "./tracelinq/mark-dark.svg",
       "mark-monochrome": "./tracelinq/mark-monochrome.svg",
       "mark-reversed": "./tracelinq/mark-reversed.svg",
-      "favicon": "./tracelinq/favicon.svg"
+      "favicon": "./tracelinq/favicon.svg",
+      "wordmark": "./tracelinq/wordmark.svg",
+      "lockup-horizontal": "./tracelinq/lockup-horizontal.svg",
+      "lockup-stacked": "./tracelinq/lockup-stacked.svg"
     }
   },
   {
@@ -84,7 +93,10 @@
       "mark-dark": "./visionlinq/mark-dark.svg",
       "mark-monochrome": "./visionlinq/mark-monochrome.svg",
       "mark-reversed": "./visionlinq/mark-reversed.svg",
-      "favicon": "./visionlinq/favicon.svg"
+      "favicon": "./visionlinq/favicon.svg",
+      "wordmark": "./visionlinq/wordmark.svg",
+      "lockup-horizontal": "./visionlinq/lockup-horizontal.svg",
+      "lockup-stacked": "./visionlinq/lockup-stacked.svg"
     }
   }
 ]

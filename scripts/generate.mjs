@@ -2,6 +2,7 @@ import { mkdir, rm, writeFile } from "node:fs/promises";
 
 import { buildColorMark, buildMonochromeMark } from "../src/geometry.mjs";
 import { loadProducts, validateRegistry } from "../src/registry.mjs";
+import { buildLockup, buildWordmarkSvg } from "../src/wordmark.mjs";
 
 const root = new URL("../", import.meta.url);
 const productsUrl = new URL("products/", root);
@@ -29,6 +30,9 @@ for (const product of products) {
     "mark-monochrome.svg": buildMonochromeMark({ foreground: "#09090B" }),
     "mark-reversed.svg": buildMonochromeMark({ foreground: "#FAFAFA" }),
     "favicon.svg": buildColorMark(product, { favicon: true }),
+    "wordmark.svg": buildWordmarkSvg(product.name),
+    "lockup-horizontal.svg": buildLockup(product, "horizontal"),
+    "lockup-stacked.svg": buildLockup(product, "stacked"),
   };
 
   await Promise.all(
