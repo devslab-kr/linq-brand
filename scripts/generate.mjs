@@ -1,6 +1,8 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
+import { strToU8, zipSync } from "fflate";
 import pngToIco from "png-to-ico";
 import sharp from "sharp";
 
@@ -11,6 +13,7 @@ import { buildLockup, buildWordmarkSvg } from "../src/wordmark.mjs";
 const root = new URL("../", import.meta.url);
 const productsUrl = new URL("products/", root);
 const distUrl = new URL("dist/", root);
+const downloadsUrl = new URL("downloads/", distUrl);
 
 const products = await loadProducts(productsUrl);
 const registryErrors = validateRegistry(products);
@@ -20,6 +23,7 @@ if (registryErrors.length > 0) {
 
 await rm(distUrl, { recursive: true, force: true });
 await mkdir(distUrl, { recursive: true });
+await mkdir(downloadsUrl, { recursive: true });
 
 function innerSvg(svg) {
   return svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
@@ -50,8 +54,37 @@ async function writePng(svg, outputUrl, width, height = width) {
     .toFile(fileURLToPath(outputUrl));
 }
 
+function sha256(buffer) {
+  return createHash("sha256").update(buffer).digest("hex");
+}
+
+async function writeChecksums(productUrl) {
+  const fileNames = (await readdir(productUrl)).filter((name) => name !== "checksums.json").sort();
+  const checksums = {};
+  for (const fileName of fileNames) checksums[fileName] = sha256(await readFile(new URL(fileName, productUrl)));
+  await writeFile(new URL("checksums.json", productUrl), `${JSON.stringify(checksums, null, 2)}\n`, "utf8");
+  return checksums;
+}
+
+async function writeDownload(product, productUrl) {
+  const fileNames = (await readdir(productUrl)).sort();
+  const entries = {};
+  for (const fileName of fileNames) entries[fileName] = await readFile(new URL(fileName, productUrl));
+  entries["README.txt"] = strToU8(
+    `${product.name} official brand assets\nCanonical guidance: https://devslab.kr/brand/products\n`,
+  );
+  entries["BRAND-LICENSE.md"] = await readFile(new URL("BRAND-LICENSE.md", root));
+  entries["manifest.json"] = strToU8(`${JSON.stringify(product, null, 2)}\n`);
+  const sortedEntries = Object.fromEntries(Object.entries(entries).sort(([left], [right]) => left.localeCompare(right)));
+  const archive = zipSync(sortedEntries, { level: 9, mtime: new Date(1980, 0, 1, 0, 0, 0) });
+  const fileName = `${product.id}-brand-assets.zip`;
+  await writeFile(new URL(fileName, downloadsUrl), archive);
+  return [fileName, sha256(archive)];
+}
+
 const registry = [];
 const tokenLines = [":root {"];
+const downloadChecksums = {};
 
 for (const product of products) {
   const productUrl = new URL(`${product.id}/`, distUrl);
@@ -91,6 +124,9 @@ for (const product of products) {
     [16, 32, 48].map((size) => fileURLToPath(new URL(`mark-${size}.png`, productUrl))),
   );
   await writeFile(new URL("favicon.ico", productUrl), ico);
+  await writeChecksums(productUrl);
+  const [downloadName, downloadChecksum] = await writeDownload(product, productUrl);
+  downloadChecksums[downloadName] = downloadChecksum;
 
   registry.push({
     ...product,
@@ -107,5 +143,10 @@ for (const product of products) {
 tokenLines.push("}", "");
 await writeFile(new URL("index.json", distUrl), `${JSON.stringify(registry, null, 2)}\n`, "utf8");
 await writeFile(new URL("tokens.css", distUrl), tokenLines.join("\n"), "utf8");
+await writeFile(
+  new URL("checksums.json", downloadsUrl),
+  `${JSON.stringify(downloadChecksums, null, 2)}\n`,
+  "utf8",
+);
 
 console.log(`Generated Linq vector assets: ${products.length} products`);

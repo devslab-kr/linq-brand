@@ -6,6 +6,17 @@
   "engines": {
     "node": ">=20"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "BRAND-LICENSE.md"
+  ],
+  "exports": {
+    "./registry": "./dist/index.json",
+    "./tokens.css": "./dist/tokens.css",
+    "./assets/*": "./dist/*"
+  },
   "scripts": {
     "generate": "node scripts/generate.mjs",
     "validate": "node scripts/validate.mjs",
