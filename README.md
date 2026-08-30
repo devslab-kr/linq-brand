@@ -15,3 +15,5 @@ CSS tokens are available from `@devslab/linq-brand/tokens.css`; static files res
 When several product marks appear together, display each complete product name. For a linked logo, use the link's product name as its accessible name; duplicate decorative images use empty alternative text or `aria-hidden="true"`.
 
 The canonical guidelines are published at <https://devslab.kr/brand/products>. Source code uses the MIT license; artwork follows [BRAND-LICENSE.md](./BRAND-LICENSE.md).
+
+Package releases are available from [npm](https://www.npmjs.com/package/@devslab/linq-brand) and [GitHub Releases](https://github.com/devslab-kr/linq-brand/releases). Issues and source contributions belong in the [Devslab repository](https://github.com/devslab-kr/linq-brand).

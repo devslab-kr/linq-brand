@@ -2,6 +2,14 @@
   "name": "@devslab/linq-brand",
   "version": "0.1.0",
   "description": "Official public assets and registry for the DevsLab Linq product family",
+  "homepage": "https://github.com/devslab-kr/linq-brand#readme",
+  "bugs": {
+    "url": "https://github.com/devslab-kr/linq-brand/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devslab-kr/linq-brand.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=20"
