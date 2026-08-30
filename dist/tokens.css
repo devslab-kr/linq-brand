@@ -1,0 +1,18 @@
+:root {
+  --linq-asklinq-light: #0F766E;
+  --linq-asklinq-dark: #5EEAD4;
+  --linq-asklinq-mark-rear: #14B8A6;
+  --linq-asklinq-mark-front: #0F766E;
+  --linq-booklinq-light: #B45309;
+  --linq-booklinq-dark: #FBBF24;
+  --linq-booklinq-mark-rear: #F59E0B;
+  --linq-booklinq-mark-front: #B45309;
+  --linq-tracelinq-light: #7E22CE;
+  --linq-tracelinq-dark: #D8B4FE;
+  --linq-tracelinq-mark-rear: #C084FC;
+  --linq-tracelinq-mark-front: #7E22CE;
+  --linq-visionlinq-light: #1D4ED8;
+  --linq-visionlinq-dark: #8AACF8;
+  --linq-visionlinq-mark-rear: #60A5FA;
+  --linq-visionlinq-mark-front: #1D4ED8;
+}

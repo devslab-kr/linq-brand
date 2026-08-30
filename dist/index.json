@@ -1,0 +1,90 @@
+[
+  {
+    "id": "asklinq",
+    "name": "AskLinq",
+    "colorId": "P01",
+    "status": "active",
+    "meaning": "conversation, questions, guidance",
+    "primary": {
+      "light": "#0F766E",
+      "dark": "#5EEAD4"
+    },
+    "mark": {
+      "rear": "#14B8A6",
+      "front": "#0F766E"
+    },
+    "assets": {
+      "mark-color": "./asklinq/mark-color.svg",
+      "mark-dark": "./asklinq/mark-dark.svg",
+      "mark-monochrome": "./asklinq/mark-monochrome.svg",
+      "mark-reversed": "./asklinq/mark-reversed.svg",
+      "favicon": "./asklinq/favicon.svg"
+    }
+  },
+  {
+    "id": "booklinq",
+    "name": "BookLinq",
+    "colorId": "P02",
+    "status": "active",
+    "meaning": "booking, hospitality, confirmed time",
+    "primary": {
+      "light": "#B45309",
+      "dark": "#FBBF24"
+    },
+    "mark": {
+      "rear": "#F59E0B",
+      "front": "#B45309"
+    },
+    "assets": {
+      "mark-color": "./booklinq/mark-color.svg",
+      "mark-dark": "./booklinq/mark-dark.svg",
+      "mark-monochrome": "./booklinq/mark-monochrome.svg",
+      "mark-reversed": "./booklinq/mark-reversed.svg",
+      "favicon": "./booklinq/favicon.svg"
+    }
+  },
+  {
+    "id": "tracelinq",
+    "name": "TraceLinq",
+    "colorId": "P04",
+    "status": "active",
+    "meaning": "traces, branching, observability",
+    "primary": {
+      "light": "#7E22CE",
+      "dark": "#D8B4FE"
+    },
+    "mark": {
+      "rear": "#C084FC",
+      "front": "#7E22CE"
+    },
+    "assets": {
+      "mark-color": "./tracelinq/mark-color.svg",
+      "mark-dark": "./tracelinq/mark-dark.svg",
+      "mark-monochrome": "./tracelinq/mark-monochrome.svg",
+      "mark-reversed": "./tracelinq/mark-reversed.svg",
+      "favicon": "./tracelinq/favicon.svg"
+    }
+  },
+  {
+    "id": "visionlinq",
+    "name": "VisionLinq",
+    "colorId": "P03",
+    "status": "active",
+    "meaning": "documents, precision, structured extraction",
+    "primary": {
+      "light": "#1D4ED8",
+      "dark": "#8AACF8"
+    },
+    "mark": {
+      "rear": "#60A5FA",
+      "front": "#1D4ED8"
+    },
+    "assets": {
+      "mark-color": "./visionlinq/mark-color.svg",
+      "mark-dark": "./visionlinq/mark-dark.svg",
+      "mark-monochrome": "./visionlinq/mark-monochrome.svg",
+      "mark-reversed": "./visionlinq/mark-reversed.svg",
+      "favicon": "./visionlinq/favicon.svg"
+    }
+  }
+]
