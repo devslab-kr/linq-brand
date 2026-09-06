@@ -1,5 +1,9 @@
 # @devslab/linq-brand
 
+<!-- publisher:start -->
+Published by [데브스랩(DevsLab)](https://devslab.kr/).
+<!-- publisher:end -->
+
 Official, framework-neutral assets and registry data for the DevsLab Linq Product Family.
 
 ```sh
