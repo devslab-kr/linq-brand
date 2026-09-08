@@ -8,6 +8,7 @@ const products = [
   ["booklinq", "#B45309", "#FBBF24"],
   ["visionlinq", "#1D4ED8", "#8AACF8"],
   ["tracelinq", "#7E22CE", "#D8B4FE"],
+  ["gitlinq", "#3F6212", "#BEF264"],
 ].map(([id, light, dark]) => ({ id, primary: { light, dark } }));
 
 test("approved light anchors meet WCAG AA on white", () => {

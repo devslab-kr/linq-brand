@@ -23,13 +23,17 @@ const required = [
   "LICENSE",
   "BRAND-LICENSE.md",
   "dist/index.json",
+  "dist/color-lanes.json",
   "dist/tokens.css",
+  "dist/og-family.svg",
+  "dist/og-family.png",
   "dist/downloads/asklinq-brand-assets.zip",
   "dist/downloads/booklinq-brand-assets.zip",
+  "dist/downloads/gitlinq-brand-assets.zip",
   "dist/downloads/visionlinq-brand-assets.zip",
   "dist/downloads/tracelinq-brand-assets.zip",
 ];
-const forbiddenPrefixes = ["products/", "src/", "scripts/", "tests/", "node_modules/"];
+const forbiddenPrefixes = ["products/", "src/", "scripts/", "tests/", "docs/", "node_modules/"];
 const errors = required.filter((path) => !names.has(path)).map((path) => `Missing package file: ${path}`);
 for (const name of names) {
   if (forbiddenPrefixes.some((prefix) => name.startsWith(prefix))) errors.push(`Private source included: ${name}`);

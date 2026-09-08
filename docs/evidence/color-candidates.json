@@ -1,0 +1,2984 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-08T16:00:54.703Z",
+  "purpose": "Evaluate five unapproved GitLinq color candidates against the four existing registered product palettes.",
+  "approval": "none",
+  "source": {
+    "repository": "https://github.com/devslab-kr/linq-brand",
+    "baselineCommit": "c9794c8f8c95db551e3abfc4cd1f91bab0c3be64",
+    "governanceDocument": "../color-registry.md",
+    "governanceSections": [
+      "6",
+      "6.1",
+      "7",
+      "14"
+    ]
+  },
+  "library": {
+    "name": "colorjs.io",
+    "version": "0.7.1",
+    "tarball": "https://registry.npmjs.org/colorjs.io/-/colorjs.io-0.7.1.tgz",
+    "integrity": "sha512-LY7OHnJZxHwT5UlzNa9bbhHHDbzB6yE5+3MIPwJEQKRvSCt/T4G7epsj+9j2BExUIIfXFIJGsIXUKdfrK9Q5tA==",
+    "bundleSha256": "15eb26ab38176a6a82307325cf37e69e2b71ccf0ff42c5cc9538c8b550f6dbfd"
+  },
+  "runtime": "v24.12.0",
+  "method": {
+    "inputSpace": "Opaque sRGB #RRGGBB",
+    "coordinates": "OKLCH (L and C on native 0..1 scale; h degrees), OKLab, and CIELAB D50",
+    "deltaEOK": "Color.deltaE(other, \"OK\"): Euclidean distance in OKLab, the Cartesian form corresponding to OKLCH. Native scale; not multiplied by 100. No Euclidean distance is taken directly over polar L/C/h coordinates.",
+    "ciede2000": "Color.deltaE(other, \"2000\"); default kL=1, kC=1, kH=1. Color.js CIELAB D50 conversion.",
+    "contrast": "Color.contrast(background, \"WCAG21\") relative-luminance ratio, used with the existing design/WCAG 2.2 normal-text requirement of >=4.5:1; light #FFFFFF, dark #0D0F13.",
+    "matching": "Each candidate role is compared only to the same role of all four existing products; front duplicates primary.light as in the supplied palettes. No invented aggregate average or color-distance pass threshold.",
+    "distanceApprovalThreshold": null,
+    "notMeasured": [
+      "16px raster recognition",
+      "grayscale/CVD visual recognition",
+      "GitLinq semantic confusion",
+      "interaction/focus component contrast",
+      "full ramp accessibility",
+      "approval/allocation record"
+    ]
+  },
+  "selfChecks": {
+    "identityDeltaEOK": 0,
+    "identityCIEDE2000": 0,
+    "blackWhiteContrast": 21
+  },
+  "activeProducts": [
+    {
+      "id": "asklinq",
+      "name": "AskLinq",
+      "colorId": "P01",
+      "status": "active",
+      "meaning": "conversation, questions, guidance",
+      "primary": {
+        "light": "#0F766E",
+        "dark": "#5EEAD4"
+      },
+      "mark": {
+        "rear": "#14B8A6",
+        "front": "#0F766E"
+      },
+      "source": {
+        "relativePath": "products/asklinq.json",
+        "sha256": "8861b9a93e17417210193965f18928a6ea4ae011b6be55e023d452c665c60cb6"
+      },
+      "coordinates": {
+        "primary.light": {
+          "hex": "#0F766E",
+          "oklch": [
+            0.5109377764334319,
+            0.08605545799515085,
+            186.3913713079425
+          ],
+          "oklab": [
+            0.5109377764334319,
+            -0.08552059707770254,
+            -0.009579630798127237
+          ],
+          "labD50": [
+            44.28871956059272,
+            -29.61404919984209,
+            -3.7975455441904504
+          ]
+        },
+        "primary.dark": {
+          "hex": "#5EEAD4",
+          "oklch": [
+            0.8548817801506399,
+            0.12507543494903095,
+            181.07073798654815
+          ],
+          "oklab": [
+            0.8548817801506399,
+            -0.1250535950541971,
+            -0.002337261583597705
+          ],
+          "labD50": [
+            84.72325293297814,
+            -43.50025285008813,
+            -1.2151396355273514
+          ]
+        },
+        "mark.front": {
+          "hex": "#0F766E",
+          "oklch": [
+            0.5109377764334319,
+            0.08605545799515085,
+            186.3913713079425
+          ],
+          "oklab": [
+            0.5109377764334319,
+            -0.08552059707770254,
+            -0.009579630798127237
+          ],
+          "labD50": [
+            44.28871956059272,
+            -29.61404919984209,
+            -3.7975455441904504
+          ]
+        },
+        "mark.rear": {
+          "hex": "#14B8A6",
+          "oklch": [
+            0.7037526674560554,
+            0.12301840202704153,
+            182.50252746745971
+          ],
+          "oklab": [
+            0.7037526674560554,
+            -0.12290107893957175,
+            -0.005371408825994406
+          ],
+          "labD50": [
+            67.14859756614491,
+            -42.92012893123559,
+            -2.3296855454586263
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 5.473440844839395,
+        "darkOnBrandSurface": 12.965511002997795,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      }
+    },
+    {
+      "id": "booklinq",
+      "name": "BookLinq",
+      "colorId": "P02",
+      "status": "active",
+      "meaning": "booking, hospitality, confirmed time",
+      "primary": {
+        "light": "#B45309",
+        "dark": "#FBBF24"
+      },
+      "mark": {
+        "rear": "#F59E0B",
+        "front": "#B45309"
+      },
+      "source": {
+        "relativePath": "products/booklinq.json",
+        "sha256": "f4db0536277fd02c315ed803b0f9f2f72bd5bd472a74215d119b17a72280adf3"
+      },
+      "coordinates": {
+        "primary.light": {
+          "hex": "#B45309",
+          "oklch": [
+            0.5552831123563562,
+            0.14550520791268254,
+            48.99752382381672
+          ],
+          "oklab": [
+            0.5552831123563562,
+            0.0954647512132007,
+            0.1098100487456165
+          ],
+          "labD50": [
+            47.45945195339472,
+            37.772241110757335,
+            54.904692362002
+          ]
+        },
+        "primary.dark": {
+          "hex": "#FBBF24",
+          "oklch": [
+            0.8368605748874489,
+            0.16442156368790437,
+            84.42862691710275
+          ],
+          "oklab": [
+            0.8368605748874489,
+            0.015962972443615442,
+            0.16364484139849922
+          ],
+          "labD50": [
+            81.24763084822048,
+            13.270676191664721,
+            77.10464326116114
+          ]
+        },
+        "mark.front": {
+          "hex": "#B45309",
+          "oklch": [
+            0.5552831123563562,
+            0.14550520791268254,
+            48.99752382381672
+          ],
+          "oklab": [
+            0.5552831123563562,
+            0.0954647512132007,
+            0.1098100487456165
+          ],
+          "labD50": [
+            47.45945195339472,
+            37.772241110757335,
+            54.904692362002
+          ]
+        },
+        "mark.rear": {
+          "hex": "#F59E0B",
+          "oklch": [
+            0.768590359222848,
+            0.16465940106168822,
+            70.08038641431222
+          ],
+          "oklab": [
+            0.768590359222848,
+            0.05609969031644246,
+            0.15480808475138869
+          ],
+          "labD50": [
+            72.79137201057483,
+            26.933049897681027,
+            75.43390252197632
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 5.021270622973544,
+        "darkOnBrandSurface": 11.49026781473039,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      }
+    },
+    {
+      "id": "visionlinq",
+      "name": "VisionLinq",
+      "colorId": "P03",
+      "status": "active",
+      "meaning": "documents, precision, structured extraction",
+      "primary": {
+        "light": "#1D4ED8",
+        "dark": "#8AACF8"
+      },
+      "mark": {
+        "rear": "#60A5FA",
+        "front": "#1D4ED8"
+      },
+      "source": {
+        "relativePath": "products/visionlinq.json",
+        "sha256": "790e0e1bfed09c45b2ce1d108e83bf7d040c603081a7822678a38e1ed4a260f3"
+      },
+      "coordinates": {
+        "primary.light": {
+          "hex": "#1D4ED8",
+          "oklch": [
+            0.4881983136072485,
+            0.21716547805456024,
+            264.37630562703
+          ],
+          "oklab": [
+            0.4881983136072485,
+            -0.021281014304553425,
+            -0.2161202519173876
+          ],
+          "labD50": [
+            37.65814452120921,
+            27.01816303548607,
+            -76.49738634194266
+          ]
+        },
+        "primary.dark": {
+          "hex": "#8AACF8",
+          "oklch": [
+            0.7495517819886043,
+            0.11654640319571087,
+            265.28360688222017
+          ],
+          "oklab": [
+            0.7495517819886043,
+            -0.00958287148817144,
+            -0.11615176568566832
+          ],
+          "labD50": [
+            70.1195910940004,
+            2.936199452441002,
+            -42.09629856726813
+          ]
+        },
+        "mark.front": {
+          "hex": "#1D4ED8",
+          "oklch": [
+            0.4881983136072485,
+            0.21716547805456024,
+            264.37630562703
+          ],
+          "oklab": [
+            0.4881983136072485,
+            -0.021281014304553425,
+            -0.2161202519173876
+          ],
+          "labD50": [
+            37.65814452120921,
+            27.01816303548607,
+            -76.49738634194266
+          ]
+        },
+        "mark.rear": {
+          "hex": "#60A5FA",
+          "oklch": [
+            0.7137400505903395,
+            0.1433805348005996,
+            254.62402440760917
+          ],
+          "oklab": [
+            0.7137400505903395,
+            -0.038017613212925294,
+            -0.13824846778644007
+          ],
+          "labD50": [
+            66.0367686949263,
+            -2.920086419436474,
+            -49.74880401779116
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 6.70192569287205,
+        "darkOnBrandSurface": 8.528074680666368,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      }
+    },
+    {
+      "id": "tracelinq",
+      "name": "TraceLinq",
+      "colorId": "P04",
+      "status": "active",
+      "meaning": "traces, branching, observability",
+      "primary": {
+        "light": "#7E22CE",
+        "dark": "#D8B4FE"
+      },
+      "mark": {
+        "rear": "#C084FC",
+        "front": "#7E22CE"
+      },
+      "source": {
+        "relativePath": "products/tracelinq.json",
+        "sha256": "61bdc33f5776b70105a4c4a2407f81ce5f2d3a2d981f2a7c1ccf7e9f2d34825b"
+      },
+      "coordinates": {
+        "primary.light": {
+          "hex": "#7E22CE",
+          "oklch": [
+            0.4955183606947161,
+            0.23687073290664443,
+            301.92405489214974
+          ],
+          "oklab": [
+            0.4955183606947161,
+            0.12525599239204754,
+            -0.2010439764768251
+          ],
+          "labD50": [
+            36.98583887445537,
+            60.220755442671,
+            -71.4672996467098
+          ]
+        },
+        "primary.dark": {
+          "hex": "#D8B4FE",
+          "oklch": [
+            0.8267591149289479,
+            0.10822904326317247,
+            306.38269206097294
+          ],
+          "oklab": [
+            0.8267591149289479,
+            0.06419884031543238,
+            -0.0871322828107658
+          ],
+          "labD50": [
+            78.46513545850041,
+            23.682498369703154,
+            -31.861808800520365
+          ]
+        },
+        "mark.front": {
+          "hex": "#7E22CE",
+          "oklch": [
+            0.4955183606947161,
+            0.23687073290664443,
+            301.92405489214974
+          ],
+          "oklab": [
+            0.4955183606947161,
+            0.12525599239204754,
+            -0.2010439764768251
+          ],
+          "labD50": [
+            36.98583887445537,
+            60.220755442671,
+            -71.4672996467098
+          ]
+        },
+        "mark.rear": {
+          "hex": "#C084FC",
+          "oklch": [
+            0.7216853890638155,
+            0.1766884240095757,
+            305.5037550006846
+          ],
+          "oklab": [
+            0.7216853890638155,
+            0.10261291701581182,
+            -0.14383806325341608
+          ],
+          "labD50": [
+            65.09761194317834,
+            40.554162766084424,
+            -51.72633376521234
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 6.983149407032668,
+        "darkOnBrandSurface": 10.85042673379135,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cyan",
+      "primary": {
+        "light": "#0E7490",
+        "dark": "#67E8F9"
+      },
+      "mark": {
+        "front": "#0E7490",
+        "rear": "#22D3EE"
+      },
+      "status": "candidate_unapproved",
+      "coordinates": {
+        "primary.light": {
+          "hex": "#0E7490",
+          "oklch": [
+            0.5197593193251703,
+            0.09356513095441446,
+            223.1279856446271
+          ],
+          "oklab": [
+            0.5197593193251703,
+            -0.06828649451448154,
+            -0.06396396170845275
+          ],
+          "labD50": [
+            44.67229309967285,
+            -19.701127953799997,
+            -23.368555553906134
+          ]
+        },
+        "primary.dark": {
+          "hex": "#67E8F9",
+          "oklch": [
+            0.8650730125099073,
+            0.11534661303056758,
+            207.07780374013703
+          ],
+          "oklab": [
+            0.8650730125099073,
+            -0.10270338021866576,
+            -0.05250577900844511
+          ],
+          "labD50": [
+            85.30644305395161,
+            -33.51372247237511,
+            -19.646550486122493
+          ]
+        },
+        "mark.front": {
+          "hex": "#0E7490",
+          "oklch": [
+            0.5197593193251703,
+            0.09356513095441446,
+            223.1279856446271
+          ],
+          "oklab": [
+            0.5197593193251703,
+            -0.06828649451448154,
+            -0.06396396170845275
+          ],
+          "labD50": [
+            44.67229309967285,
+            -19.701127953799997,
+            -23.368555553906134
+          ]
+        },
+        "mark.rear": {
+          "hex": "#22D3EE",
+          "oklch": [
+            0.7971158285150562,
+            0.13388755129763485,
+            211.53019958526755
+          ],
+          "oklab": [
+            0.7971158285150562,
+            -0.11412101529744612,
+            -0.07001621426467497
+          ],
+          "labD50": [
+            77.42250471278317,
+            -36.046548188797324,
+            -25.887050421672274
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 5.3579583763240795,
+        "darkOnBrandSurface": 13.231754385652748,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      },
+      "nearestByRole": {
+        "primary.light": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.05772771742165274
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 14.334714536967748
+          }
+        },
+        "primary.dark": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.0558594079882897
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 12.823679597238774
+          }
+        },
+        "mark.front": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.05772771742165274
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 14.334714536967748
+          }
+        },
+        "mark.rear": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.11389784998275244
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 16.58983276859696
+          }
+        }
+      },
+      "closestAcrossSameRoles": {
+        "deltaEOK": {
+          "role": "primary.dark",
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "distance": 0.0558594079882897
+        },
+        "ciede2000": {
+          "role": "primary.dark",
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "distance": 12.823679597238774
+        }
+      },
+      "comparisons": [
+        {
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.05772771742165274,
+              "ciede2000": 14.334714536967748,
+              "oklchDifference": {
+                "lightness": 0.008821542891738421,
+                "chroma": 0.007509672959263608,
+                "shortestHueAngleDegrees": 36.736614336684596
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#67E8F9",
+              "existingHex": "#5EEAD4",
+              "deltaEOK": 0.0558594079882897,
+              "ciede2000": 12.823679597238774,
+              "oklchDifference": {
+                "lightness": 0.010191232359267444,
+                "chroma": 0.009728821918463373,
+                "shortestHueAngleDegrees": 26.007065753588876
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.05772771742165274,
+              "ciede2000": 14.334714536967748,
+              "oklchDifference": {
+                "lightness": 0.008821542891738421,
+                "chroma": 0.007509672959263608,
+                "shortestHueAngleDegrees": 36.736614336684596
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#22D3EE",
+              "existingHex": "#14B8A6",
+              "deltaEOK": 0.11389784998275244,
+              "ciede2000": 16.58983276859696,
+              "oklchDifference": {
+                "lightness": 0.09336316105900089,
+                "chroma": 0.01086914927059332,
+                "shortestHueAngleDegrees": 29.02767211780784
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.24139970393101412,
+              "ciede2000": 46.347054645751,
+              "oklchDifference": {
+                "lightness": 0.03552379303118591,
+                "chroma": 0.05194007695826808,
+                "shortestHueAngleDegrees": 174.13046182081038
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#67E8F9",
+              "existingHex": "#FBBF24",
+              "deltaEOK": 0.24819092568640969,
+              "ciede2000": 46.43358130849782,
+              "oklchDifference": {
+                "lightness": 0.028212437622458397,
+                "chroma": 0.04907495065733679,
+                "shortestHueAngleDegrees": 122.64917682303428
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.24139970393101412,
+              "ciede2000": 46.347054645751,
+              "oklchDifference": {
+                "lightness": 0.03552379303118591,
+                "chroma": 0.05194007695826808,
+                "shortestHueAngleDegrees": 174.13046182081038
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#22D3EE",
+              "existingHex": "#F59E0B",
+              "deltaEOK": 0.2834338660888907,
+              "ciede2000": 50.602200494185084,
+              "oklchDifference": {
+                "lightness": 0.028525469292208228,
+                "chroma": 0.030771849764053366,
+                "shortestHueAngleDegrees": 141.44981317095534
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "visionlinq",
+          "existingProductName": "VisionLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.16234884940102973,
+              "ciede2000": 20.840886261380316,
+              "oklchDifference": {
+                "lightness": 0.03156100571792175,
+                "chroma": 0.12360034710014578,
+                "shortestHueAngleDegrees": 41.248319982402876
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#67E8F9",
+              "existingHex": "#8AACF8",
+              "deltaEOK": 0.16145400418540068,
+              "ciede2000": 24.597065356847896,
+              "oklchDifference": {
+                "lightness": 0.11552123052130303,
+                "chroma": 0.001199790165143294,
+                "shortestHueAngleDegrees": 58.20580314208314
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.16234884940102973,
+              "ciede2000": 20.840886261380316,
+              "oklchDifference": {
+                "lightness": 0.03156100571792175,
+                "chroma": 0.12360034710014578,
+                "shortestHueAngleDegrees": 41.248319982402876
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#22D3EE",
+              "existingHex": "#60A5FA",
+              "deltaEOK": 0.13190484666625543,
+              "ciede2000": 21.092265117635133,
+              "oklchDifference": {
+                "lightness": 0.08337577792471673,
+                "chroma": 0.009492983502964736,
+                "shortestHueAngleDegrees": 43.09382482234162
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.23840563911574017,
+              "ciede2000": 29.46794661004853,
+              "oklchDifference": {
+                "lightness": 0.024240958630454168,
+                "chroma": 0.14330560195222997,
+                "shortestHueAngleDegrees": 78.79606924752264
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#67E8F9",
+              "existingHex": "#D8B4FE",
+              "deltaEOK": 0.17470918903317337,
+              "ciede2000": 35.78785647305847,
+              "oklchDifference": {
+                "lightness": 0.03831389758095938,
+                "chroma": 0.00711756976739511,
+                "shortestHueAngleDegrees": 99.30488832083591
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#0E7490",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.23840563911574017,
+              "ciede2000": 29.46794661004853,
+              "oklchDifference": {
+                "lightness": 0.024240958630454168,
+                "chroma": 0.14330560195222997,
+                "shortestHueAngleDegrees": 78.79606924752264
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#22D3EE",
+              "existingHex": "#C084FC",
+              "deltaEOK": 0.24106640993695422,
+              "ciede2000": 39.842243627790864,
+              "oklchDifference": {
+                "lightness": 0.07543043945124073,
+                "chroma": 0.04280087271194086,
+                "shortestHueAngleDegrees": 93.97355541541702
+              }
+            }
+          }
+        }
+      ],
+      "semanticComparisons": {
+        "primary.light": {
+          "context": "same_light_UI_foreground",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#0E7490",
+              "ciede2000": 53.79396237504079,
+              "deltaEOK": 0.22372011422772864
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#0E7490",
+              "ciede2000": 28.162001175630465,
+              "deltaEOK": 0.11284421666007097
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#0E7490",
+              "ciede2000": 43.68014934960604,
+              "deltaEOK": 0.2026473417576587
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#0E7490",
+              "ciede2000": 19.31529679367888,
+              "deltaEOK": 0.13111017215518891
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "action_information",
+            "label": "동작/정보",
+            "distance": 19.31529679367888
+          }
+        },
+        "primary.dark": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#67E8F9",
+              "ciede2000": 74.87982776913182,
+              "deltaEOK": 0.4234351218422126
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#67E8F9",
+              "ciede2000": 43.19835783042392,
+              "deltaEOK": 0.3886751731119499
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#67E8F9",
+              "ciede2000": 54.73331666749963,
+              "deltaEOK": 0.39043486898374974
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#67E8F9",
+              "ciede2000": 48.81300708172565,
+              "deltaEOK": 0.4079288719776574
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "addition_retained",
+            "label": "추가/유지",
+            "distance": 43.19835783042392
+          }
+        },
+        "mark.rear": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#22D3EE",
+              "ciede2000": 74.87988049898209,
+              "deltaEOK": 0.38287235371019823
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#22D3EE",
+              "ciede2000": 41.201218056204844,
+              "deltaEOK": 0.32949718699003505
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#22D3EE",
+              "ciede2000": 53.696044259126296,
+              "deltaEOK": 0.34914214313917835
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#22D3EE",
+              "ciede2000": 44.662180350376566,
+              "deltaEOK": 0.34261824005580865
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "addition_retained",
+            "label": "추가/유지",
+            "distance": 41.201218056204844
+          }
+        }
+      }
+    },
+    {
+      "id": "lime",
+      "primary": {
+        "light": "#3F6212",
+        "dark": "#BEF264"
+      },
+      "mark": {
+        "front": "#3F6212",
+        "rear": "#A3E635"
+      },
+      "status": "candidate_unapproved",
+      "coordinates": {
+        "primary.light": {
+          "hex": "#3F6212",
+          "oklch": [
+            0.4528403225890614,
+            0.11293255888262119,
+            130.93254317831952
+          ],
+          "oklab": [
+            0.4528403225890614,
+            -0.0739900270849751,
+            0.08531845490713807
+          ],
+          "labD50": [
+            37.65977936497591,
+            -23.130656648183727,
+            37.829135174023165
+          ]
+        },
+        "primary.dark": {
+          "hex": "#BEF264",
+          "oklch": [
+            0.8971521602358916,
+            0.17857566252901386,
+            126.6652166769959
+          ],
+          "oklab": [
+            0.8971521602358916,
+            -0.10663436613402727,
+            0.14324237922790328
+          ],
+          "labD50": [
+            89.8050588713673,
+            -32.84399360279411,
+            61.057579499831924
+          ]
+        },
+        "mark.front": {
+          "hex": "#3F6212",
+          "oklch": [
+            0.4528403225890614,
+            0.11293255888262119,
+            130.93254317831952
+          ],
+          "oklab": [
+            0.4528403225890614,
+            -0.0739900270849751,
+            0.08531845490713807
+          ],
+          "labD50": [
+            37.65977936497591,
+            -23.130656648183727,
+            37.829135174023165
+          ]
+        },
+        "mark.rear": {
+          "hex": "#A3E635",
+          "oklch": [
+            0.8493154306781208,
+            0.20733979835901065,
+            128.84975023534435
+          ],
+          "oklab": [
+            0.8493154306781208,
+            -0.1300601664454229,
+            0.161474905442747
+          ],
+          "labD50": [
+            84.53102198907575,
+            -39.95344697058212,
+            71.98847722945698
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 7.077567383029348,
+        "darkOnBrandSurface": 14.681643975906312,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      },
+      "nearestByRole": {
+        "primary.light": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.11186561070355726
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 24.03955125895621
+          }
+        },
+        "primary.dark": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.13813559697909988
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 27.535269776674053
+          }
+        },
+        "mark.front": {
+          "deltaEOK": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 0.11186561070355726
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 24.03955125895621
+          }
+        },
+        "mark.rear": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.20301841278363852
+          },
+          "ciede2000": {
+            "existingProductId": "asklinq",
+            "existingProductName": "AskLinq",
+            "distance": 32.08036692166329
+          }
+        }
+      },
+      "closestAcrossSameRoles": {
+        "deltaEOK": {
+          "role": "primary.light",
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "distance": 0.11186561070355726
+        },
+        "ciede2000": {
+          "role": "primary.light",
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "distance": 24.03955125895621
+        }
+      },
+      "comparisons": [
+        {
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.11186561070355726,
+              "ciede2000": 24.03955125895621,
+              "oklchDifference": {
+                "lightness": 0.058097453844370484,
+                "chroma": 0.026877100887470334,
+                "shortestHueAngleDegrees": 55.45882812962299
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#BEF264",
+              "existingHex": "#5EEAD4",
+              "deltaEOK": 0.15270718661991947,
+              "ciede2000": 27.8537625552481,
+              "oklchDifference": {
+                "lightness": 0.042270380085251746,
+                "chroma": 0.053500227579982906,
+                "shortestHueAngleDegrees": 54.405521309552256
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.11186561070355726,
+              "ciede2000": 24.03955125895621,
+              "oklchDifference": {
+                "lightness": 0.058097453844370484,
+                "chroma": 0.026877100887470334,
+                "shortestHueAngleDegrees": 55.45882812962299
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#A3E635",
+              "existingHex": "#14B8A6",
+              "deltaEOK": 0.22153433854782678,
+              "ciede2000": 32.08036692166329,
+              "oklchDifference": {
+                "lightness": 0.1455627632220654,
+                "chroma": 0.08432139633196911,
+                "shortestHueAngleDegrees": 53.65277723211537
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.19952264340705558,
+              "ciede2000": 40.83914979670532,
+              "oklchDifference": {
+                "lightness": 0.10244278976729482,
+                "chroma": 0.03257264903006135,
+                "shortestHueAngleDegrees": 81.9350193545028
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#BEF264",
+              "existingHex": "#FBBF24",
+              "deltaEOK": 0.13813559697909988,
+              "ciede2000": 27.535269776674053,
+              "oklchDifference": {
+                "lightness": 0.0602915853484427,
+                "chroma": 0.014154098841109491,
+                "shortestHueAngleDegrees": 42.23658975989315
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.19952264340705558,
+              "ciede2000": 40.83914979670532,
+              "oklchDifference": {
+                "lightness": 0.10244278976729482,
+                "chroma": 0.03257264903006135,
+                "shortestHueAngleDegrees": 81.9350193545028
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#A3E635",
+              "existingHex": "#F59E0B",
+              "deltaEOK": 0.20301841278363852,
+              "ciede2000": 38.08553108605552,
+              "oklchDifference": {
+                "lightness": 0.08072507145527275,
+                "chroma": 0.042680397297322425,
+                "shortestHueAngleDegrees": 58.76936382103213
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "visionlinq",
+          "existingProductName": "VisionLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.30804824545705695,
+              "ciede2000": 58.80687410577924,
+              "oklchDifference": {
+                "lightness": 0.03535799101818715,
+                "chroma": 0.10423291917193905,
+                "shortestHueAngleDegrees": 133.44376244871046
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#BEF264",
+              "existingHex": "#8AACF8",
+              "deltaEOK": 0.31383146223280395,
+              "ciede2000": 60.14454620168434,
+              "oklchDifference": {
+                "lightness": 0.14760037824728733,
+                "chroma": 0.062029259333302986,
+                "shortestHueAngleDegrees": 138.61839020522427
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.30804824545705695,
+              "ciede2000": 58.80687410577924,
+              "oklchDifference": {
+                "lightness": 0.03535799101818715,
+                "chroma": 0.10423291917193905,
+                "shortestHueAngleDegrees": 133.44376244871046
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#A3E635",
+              "existingHex": "#60A5FA",
+              "deltaEOK": 0.3415942267535944,
+              "ciede2000": 65.14316688306248,
+              "oklchDifference": {
+                "lightness": 0.13557538008778125,
+                "chroma": 0.06395926355841106,
+                "shortestHueAngleDegrees": 125.77427417226482
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.35145957565859665,
+              "ciede2000": 73.49365011030076,
+              "oklchDifference": {
+                "lightness": 0.042678038105654736,
+                "chroma": 0.12393817402402324,
+                "shortestHueAngleDegrees": 170.99151171383022
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#BEF264",
+              "existingHex": "#D8B4FE",
+              "deltaEOK": 0.2953161867605975,
+              "ciede2000": 64.94912710822992,
+              "oklchDifference": {
+                "lightness": 0.07039304530694368,
+                "chroma": 0.07034661926584139,
+                "shortestHueAngleDegrees": 179.71747538397705
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#3F6212",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.35145957565859665,
+              "ciede2000": 73.49365011030076,
+              "oklchDifference": {
+                "lightness": 0.042678038105654736,
+                "chroma": 0.12393817402402324,
+                "shortestHueAngleDegrees": 170.99151171383022
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#A3E635",
+              "existingHex": "#C084FC",
+              "deltaEOK": 0.40452713153000286,
+              "ciede2000": 80.54675848396792,
+              "oklchDifference": {
+                "lightness": 0.12763004161430525,
+                "chroma": 0.030651374349434934,
+                "shortestHueAngleDegrees": 176.65400476534023
+              }
+            }
+          }
+        }
+      ],
+      "semanticComparisons": {
+        "primary.light": {
+          "context": "same_light_UI_foreground",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#3F6212",
+              "ciede2000": 48.35044010978837,
+              "deltaEOK": 0.21163018048359544
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#3F6212",
+              "ciede2000": 12.600768789206096,
+              "deltaEOK": 0.0577130664329557
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#3F6212",
+              "ciede2000": 30.07586199542692,
+              "deltaEOK": 0.14447698669578216
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#3F6212",
+              "ciede2000": 56.99801317293777,
+              "deltaEOK": 0.2744337666344531
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "addition_retained",
+            "label": "추가/유지",
+            "distance": 12.600768789206096
+          }
+        },
+        "primary.dark": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#BEF264",
+              "ciede2000": 66.1748725116733,
+              "deltaEOK": 0.44893259847024397
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#BEF264",
+              "ciede2000": 42.62542498452943,
+              "deltaEOK": 0.4213464030014951
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#BEF264",
+              "ciede2000": 47.07740081065871,
+              "deltaEOK": 0.3897257692248647
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#BEF264",
+              "ciede2000": 77.90451570076245,
+              "deltaEOK": 0.5303852975108596
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "addition_retained",
+            "label": "추가/유지",
+            "distance": 42.62542498452943
+          }
+        },
+        "mark.rear": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#A3E635",
+              "ciede2000": 67.39344305934247,
+              "deltaEOK": 0.42772537687447465
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#A3E635",
+              "ciede2000": 40.61094593301812,
+              "deltaEOK": 0.3822280477778106
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#A3E635",
+              "ciede2000": 46.52916234279556,
+              "deltaEOK": 0.35914600963661114
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#A3E635",
+              "ciede2000": 78.27787113797395,
+              "deltaEOK": 0.5109586629503354
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "addition_retained",
+            "label": "추가/유지",
+            "distance": 40.61094593301812
+          }
+        }
+      }
+    },
+    {
+      "id": "rose",
+      "primary": {
+        "light": "#BE123C",
+        "dark": "#FDA4AF"
+      },
+      "mark": {
+        "front": "#BE123C",
+        "rear": "#FB7185"
+      },
+      "status": "candidate_unapproved",
+      "coordinates": {
+        "primary.light": {
+          "hex": "#BE123C",
+          "oklch": [
+            0.5142563147617311,
+            0.19780565183015228,
+            16.934988161961996
+          ],
+          "oklab": [
+            0.5142563147617311,
+            0.18922798496801727,
+            0.057618101330183136
+          ],
+          "labD50": [
+            41.4757781262204,
+            63.831673225547505,
+            26.155727241980674
+          ]
+        },
+        "primary.dark": {
+          "hex": "#FDA4AF",
+          "oklch": [
+            0.8096639203095951,
+            0.10610909260965566,
+            11.638443129968039
+          ],
+          "oklab": [
+            0.8096639203095951,
+            0.10392750176566473,
+            0.021405931682415447
+          ],
+          "labD50": [
+            76.71937364562412,
+            34.81100642361151,
+            8.75542170424206
+          ]
+        },
+        "mark.front": {
+          "hex": "#BE123C",
+          "oklch": [
+            0.5142563147617311,
+            0.19780565183015228,
+            16.934988161961996
+          ],
+          "oklab": [
+            0.5142563147617311,
+            0.18922798496801727,
+            0.057618101330183136
+          ],
+          "labD50": [
+            41.4757781262204,
+            63.831673225547505,
+            26.155727241980674
+          ]
+        },
+        "mark.rear": {
+          "hex": "#FB7185",
+          "oklch": [
+            0.71918609000199,
+            0.16898358823716791,
+            13.427983887912092
+          ],
+          "oklab": [
+            0.71918609000199,
+            0.16436401189299832,
+            0.039241874164558266
+          ],
+          "labD50": [
+            65.5328749517044,
+            54.97240278939475,
+            16.508721862665745
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 6.284429203895691,
+        "darkOnBrandSurface": 10.14409121437282,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      },
+      "nearestByRole": {
+        "primary.light": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.11488577588216077
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 23.071591552055967
+          }
+        },
+        "primary.dark": {
+          "deltaEOK": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 0.11683816253719734
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 23.209841552966246
+          }
+        },
+        "mark.front": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.11488577588216077
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 23.071591552055967
+          }
+        },
+        "mark.rear": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.16588397804814833
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 29.82614057051251
+          }
+        }
+      },
+      "closestAcrossSameRoles": {
+        "deltaEOK": {
+          "role": "primary.light",
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "distance": 0.11488577588216077
+        },
+        "ciede2000": {
+          "role": "primary.light",
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "distance": 23.071591552055967
+        }
+      },
+      "comparisons": [
+        {
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2828662780112861,
+              "ciede2000": 58.08373652359007,
+              "oklchDifference": {
+                "lightness": 0.003318538328299203,
+                "chroma": 0.11175019383500143,
+                "shortestHueAngleDegrees": 169.4563831459805
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDA4AF",
+              "existingHex": "#5EEAD4",
+              "deltaEOK": 0.2346076230131889,
+              "ciede2000": 56.3571902637384,
+              "oklchDifference": {
+                "lightness": 0.04521785984104476,
+                "chroma": 0.01896634233937529,
+                "shortestHueAngleDegrees": 169.4322948565801
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2828662780112861,
+              "ciede2000": 58.08373652359007,
+              "oklchDifference": {
+                "lightness": 0.003318538328299203,
+                "chroma": 0.11175019383500143,
+                "shortestHueAngleDegrees": 169.4563831459805
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB7185",
+              "existingHex": "#14B8A6",
+              "deltaEOK": 0.2911181340310514,
+              "ciede2000": 64.24559485762843,
+              "oklchDifference": {
+                "lightness": 0.015433422545934605,
+                "chroma": 0.04596518621012638,
+                "shortestHueAngleDegrees": 169.07454357954762
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.11488577588216077,
+              "ciede2000": 23.071591552055967,
+              "oklchDifference": {
+                "lightness": 0.04102679759462513,
+                "chroma": 0.05230044391746974,
+                "shortestHueAngleDegrees": 32.062535661854724
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDA4AF",
+              "existingHex": "#FBBF24",
+              "deltaEOK": 0.16943825977711466,
+              "ciede2000": 38.823130053404114,
+              "oklchDifference": {
+                "lightness": 0.027196654577853807,
+                "chroma": 0.058312471078248704,
+                "shortestHueAngleDegrees": 72.79018378713471
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.11488577588216077,
+              "ciede2000": 23.071591552055967,
+              "oklchDifference": {
+                "lightness": 0.04102679759462513,
+                "chroma": 0.05230044391746974,
+                "shortestHueAngleDegrees": 32.062535661854724
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB7185",
+              "existingHex": "#F59E0B",
+              "deltaEOK": 0.16588397804814833,
+              "ciede2000": 36.688223744920286,
+              "oklchDifference": {
+                "lightness": 0.049404269220858055,
+                "chroma": 0.0043241871754796934,
+                "shortestHueAngleDegrees": 56.652402526400124
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "visionlinq",
+          "existingProductName": "VisionLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.34630296596708204,
+              "ciede2000": 42.749223974959236,
+              "oklchDifference": {
+                "lightness": 0.026058001154482535,
+                "chroma": 0.01935982622440796,
+                "shortestHueAngleDegrees": 112.55868253493202
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDA4AF",
+              "existingHex": "#8AACF8",
+              "deltaEOK": 0.18820253482606566,
+              "ciede2000": 36.5898721757763,
+              "oklchDifference": {
+                "lightness": 0.06011213832099083,
+                "chroma": 0.01043731058605521,
+                "shortestHueAngleDegrees": 106.35483624774787
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.34630296596708204,
+              "ciede2000": 42.749223974959236,
+              "oklchDifference": {
+                "lightness": 0.026058001154482535,
+                "chroma": 0.01935982622440796,
+                "shortestHueAngleDegrees": 112.55868253493202
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB7185",
+              "existingHex": "#60A5FA",
+              "deltaEOK": 0.26924116143649024,
+              "ciede2000": 47.52829817706091,
+              "oklchDifference": {
+                "lightness": 0.00544603941165045,
+                "chroma": 0.025603053436568324,
+                "shortestHueAngleDegrees": 118.80395948030292
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.26711345389589847,
+              "ciede2000": 34.87707843567043,
+              "oklchDifference": {
+                "lightness": 0.01873795406701495,
+                "chroma": 0.03906508107649215,
+                "shortestHueAngleDegrees": 75.01093326981226
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDA4AF",
+              "existingHex": "#D8B4FE",
+              "deltaEOK": 0.11683816253719734,
+              "ciede2000": 23.209841552966246,
+              "oklchDifference": {
+                "lightness": 0.017095194619352827,
+                "chroma": 0.0021199506535168056,
+                "shortestHueAngleDegrees": 65.2557510689951
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#BE123C",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.26711345389589847,
+              "ciede2000": 34.87707843567043,
+              "oklchDifference": {
+                "lightness": 0.01873795406701495,
+                "chroma": 0.03906508107649215,
+                "shortestHueAngleDegrees": 75.01093326981226
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB7185",
+              "existingHex": "#C084FC",
+              "deltaEOK": 0.19322967603166222,
+              "ciede2000": 29.82614057051251,
+              "oklchDifference": {
+                "lightness": 0.002499299061825555,
+                "chroma": 0.007704835772407798,
+                "shortestHueAngleDegrees": 67.92422888722751
+              }
+            }
+          }
+        }
+      ],
+      "semanticComparisons": {
+        "primary.light": {
+          "context": "same_light_UI_foreground",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#BE123C",
+              "ciede2000": 6.805047216848112,
+              "deltaEOK": 0.06690328941726198
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#BE123C",
+              "ciede2000": 61.739419571052196,
+              "deltaEOK": 0.27986496192623805
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#BE123C",
+              "ciede2000": 30.766038478407935,
+              "deltaEOK": 0.1580247576633805
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#BE123C",
+              "ciede2000": 43.21993722556311,
+              "deltaEOK": 0.3199906259902406
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 6.805047216848112
+          }
+        },
+        "primary.dark": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#FDA4AF",
+              "ciede2000": 30.382244023607193,
+              "deltaEOK": 0.28950779051511294
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#FDA4AF",
+              "ciede2000": 60.00140012644283,
+              "deltaEOK": 0.37532848234436517
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#FDA4AF",
+              "ciede2000": 38.83947250283289,
+              "deltaEOK": 0.29117687289372685
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#FDA4AF",
+              "ciede2000": 50.35340385077462,
+              "deltaEOK": 0.40147379424420054
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 30.382244023607193
+          }
+        },
+        "mark.rear": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#FB7185",
+              "ciede2000": 22.282986957385962,
+              "deltaEOK": 0.201466429302441
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#FB7185",
+              "ciede2000": 63.89523966707236,
+              "deltaEOK": 0.3427396788348391
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#FB7185",
+              "ciede2000": 36.30461704536825,
+              "deltaEOK": 0.22904964194142782
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#FB7185",
+              "ciede2000": 48.65078360078694,
+              "deltaEOK": 0.37054882503593906
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 22.282986957385962
+          }
+        }
+      }
+    },
+    {
+      "id": "orange",
+      "primary": {
+        "light": "#C2410C",
+        "dark": "#FDBA74"
+      },
+      "mark": {
+        "front": "#C2410C",
+        "rear": "#FB923C"
+      },
+      "status": "candidate_unapproved",
+      "coordinates": {
+        "primary.light": {
+          "hex": "#C2410C",
+          "oklch": [
+            0.5534275328010618,
+            0.17386476400085774,
+            38.402209681018235
+          ],
+          "oklab": [
+            0.5534275328010618,
+            0.13625251292041446,
+            0.10800096705097711
+          ],
+          "labD50": [
+            46.73063283784219,
+            51.01655945572864,
+            55.2554475871308
+          ]
+        },
+        "primary.dark": {
+          "hex": "#FDBA74",
+          "oklch": [
+            0.8365745709995145,
+            0.11653959421914772,
+            66.28954828088354
+          ],
+          "oklab": [
+            0.8365745709995145,
+            0.04686229589063928,
+            0.10670240036954082
+          ],
+          "labD50": [
+            80.8019969374132,
+            19.442322848517048,
+            45.16586143014156
+          ]
+        },
+        "mark.front": {
+          "hex": "#C2410C",
+          "oklch": [
+            0.5534275328010618,
+            0.17386476400085774,
+            38.402209681018235
+          ],
+          "oklab": [
+            0.5534275328010618,
+            0.13625251292041446,
+            0.10800096705097711
+          ],
+          "labD50": [
+            46.73063283784219,
+            51.01655945572864,
+            55.2554475871308
+          ]
+        },
+        "mark.rear": {
+          "hex": "#FB923C",
+          "oklch": [
+            0.757639802223791,
+            0.15903744298926403,
+            55.93440876833881
+          ],
+          "oklab": [
+            0.757639802223791,
+            0.08908348855915948,
+            0.1317461207728467
+          ],
+          "labD50": [
+            71.10730188405988,
+            36.11438399285299,
+            60.82105341189674
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 5.177921344028393,
+        "darkOnBrandSurface": 11.373949264328834,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      },
+      "nearestByRole": {
+        "primary.light": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.04087000681610366
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 6.369607172623172
+          }
+        },
+        "primary.dark": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.0647865076851972
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 12.03560713334186
+          }
+        },
+        "mark.front": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.04087000681610366
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 6.369607172623172
+          }
+        },
+        "mark.rear": {
+          "deltaEOK": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 0.041709709033430416
+          },
+          "ciede2000": {
+            "existingProductId": "booklinq",
+            "existingProductName": "BookLinq",
+            "distance": 8.988948119054001
+          }
+        }
+      },
+      "closestAcrossSameRoles": {
+        "deltaEOK": {
+          "role": "primary.light",
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "distance": 0.04087000681610366
+        },
+        "ciede2000": {
+          "role": "primary.light",
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "distance": 6.369607172623172
+        }
+      },
+      "comparisons": [
+        {
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2545857197585329,
+              "ciede2000": 50.98541130204428,
+              "oklchDifference": {
+                "lightness": 0.04248975636762997,
+                "chroma": 0.08780930600570688,
+                "shortestHueAngleDegrees": 147.98916162692427
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDBA74",
+              "existingHex": "#5EEAD4",
+              "deltaEOK": 0.20440126062506234,
+              "ciede2000": 43.182441699398595,
+              "oklchDifference": {
+                "lightness": 0.01830720915112538,
+                "chroma": 0.008535840729883226,
+                "shortestHueAngleDegrees": 114.78118970566462
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2545857197585329,
+              "ciede2000": 50.98541130204428,
+              "oklchDifference": {
+                "lightness": 0.04248975636762997,
+                "chroma": 0.08780930600570688,
+                "shortestHueAngleDegrees": 147.98916162692427
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB923C",
+              "existingHex": "#14B8A6",
+              "deltaEOK": 0.2581520812900592,
+              "ciede2000": 50.62115940590773,
+              "oklchDifference": {
+                "lightness": 0.053887134767735656,
+                "chroma": 0.0360190409622225,
+                "shortestHueAngleDegrees": 126.5681186991209
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.04087000681610366,
+              "ciede2000": 6.369607172623172,
+              "oklchDifference": {
+                "lightness": 0.0018555795552943621,
+                "chroma": 0.028359556088175197,
+                "shortestHueAngleDegrees": 10.595314142798486
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDBA74",
+              "existingHex": "#FBBF24",
+              "deltaEOK": 0.0647865076851972,
+              "ciede2000": 12.03560713334186,
+              "oklchDifference": {
+                "lightness": 0.0002860038879344273,
+                "chroma": 0.04788196946875664,
+                "shortestHueAngleDegrees": 18.13907863621921
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.04087000681610366,
+              "ciede2000": 6.369607172623172,
+              "oklchDifference": {
+                "lightness": 0.0018555795552943621,
+                "chroma": 0.028359556088175197,
+                "shortestHueAngleDegrees": 10.595314142798486
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB923C",
+              "existingHex": "#F59E0B",
+              "deltaEOK": 0.041709709033430416,
+              "ciede2000": 8.988948119054001,
+              "oklchDifference": {
+                "lightness": 0.010950556999057004,
+                "chroma": 0.005621958072424188,
+                "shortestHueAngleDegrees": 14.145977645973403
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "visionlinq",
+          "existingProductName": "VisionLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.36623247783629576,
+              "ciede2000": 50.44961777188897,
+              "oklchDifference": {
+                "lightness": 0.0652292191938133,
+                "chroma": 0.043300714053702505,
+                "shortestHueAngleDegrees": 134.02590405398826
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDBA74",
+              "existingHex": "#8AACF8",
+              "deltaEOK": 0.24581090711321596,
+              "ciede2000": 45.429062288766445,
+              "oklchDifference": {
+                "lightness": 0.0870227890109102,
+                "chroma": 0.000006808976563146829,
+                "shortestHueAngleDegrees": 161.00594139866337
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.36623247783629576,
+              "ciede2000": 50.44961777188897,
+              "oklchDifference": {
+                "lightness": 0.0652292191938133,
+                "chroma": 0.043300714053702505,
+                "shortestHueAngleDegrees": 134.02590405398826
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB923C",
+              "existingHex": "#60A5FA",
+              "deltaEOK": 0.3016271806658928,
+              "ciede2000": 50.58048076916473,
+              "oklchDifference": {
+                "lightness": 0.0438997516334515,
+                "chroma": 0.015656908188664442,
+                "shortestHueAngleDegrees": 161.31038436072964
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.31461591313516807,
+              "ciede2000": 47.63064973479279,
+              "oklchDifference": {
+                "lightness": 0.05790917210634572,
+                "chroma": 0.06300596890578669,
+                "shortestHueAngleDegrees": 96.4781547888685
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#FDBA74",
+              "existingHex": "#D8B4FE",
+              "deltaEOK": 0.1948558014380785,
+              "ciede2000": 42.60890661958712,
+              "oklchDifference": {
+                "lightness": 0.009815456070566553,
+                "chroma": 0.008310550955975257,
+                "shortestHueAngleDegrees": 119.9068562199106
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#C2410C",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.31461591313516807,
+              "ciede2000": 47.63064973479279,
+              "oklchDifference": {
+                "lightness": 0.05790917210634572,
+                "chroma": 0.06300596890578669,
+                "shortestHueAngleDegrees": 96.4781547888685
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#FB923C",
+              "existingHex": "#C084FC",
+              "deltaEOK": 0.2782488234394945,
+              "ciede2000": 49.42880056812213,
+              "oklchDifference": {
+                "lightness": 0.035954413159975496,
+                "chroma": 0.01765098102031168,
+                "shortestHueAngleDegrees": 110.43065376765423
+              }
+            }
+          }
+        }
+      ],
+      "semanticComparisons": {
+        "primary.light": {
+          "context": "same_light_UI_foreground",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#C2410C",
+              "ciede2000": 14.502525104453426,
+              "deltaEOK": 0.06543956557974678
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#C2410C",
+              "ciede2000": 52.773095093512715,
+              "deltaEOK": 0.24346604504814928
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#C2410C",
+              "ciede2000": 16.25058958753174,
+              "deltaEOK": 0.09678340496708658
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#C2410C",
+              "ciede2000": 49.5294254799127,
+              "deltaEOK": 0.33652373419507214
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 14.502525104453426
+          }
+        },
+        "primary.dark": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#FDBA74",
+              "ciede2000": 38.81471340946537,
+              "deltaEOK": 0.32789050136336756
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#FDBA74",
+              "ciede2000": 49.817544962723574,
+              "deltaEOK": 0.379219171326487
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#FDBA74",
+              "ciede2000": 29.14638538868125,
+              "deltaEOK": 0.29835725055438994
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#FDBA74",
+              "ciede2000": 62.10025145310961,
+              "deltaEOK": 0.4584723677221611
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "warning",
+            "label": "주의",
+            "distance": 29.14638538868125
+          }
+        },
+        "mark.rear": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#FB923C",
+              "ciede2000": 32.785736994639485,
+              "deltaEOK": 0.2507273182878695
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#FB923C",
+              "ciede2000": 52.76696214827579,
+              "deltaEOK": 0.3349306422132103
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#FB923C",
+              "ciede2000": 23.82834552293941,
+              "deltaEOK": 0.22611718184560878
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#FB923C",
+              "ciede2000": 60.145577023865265,
+              "deltaEOK": 0.428757175339108
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "warning",
+            "label": "주의",
+            "distance": 23.82834552293941
+          }
+        }
+      }
+    },
+    {
+      "id": "magenta",
+      "primary": {
+        "light": "#A21CAF",
+        "dark": "#F0ABFC"
+      },
+      "mark": {
+        "front": "#A21CAF",
+        "rear": "#E879F9"
+      },
+      "status": "candidate_unapproved",
+      "coordinates": {
+        "primary.light": {
+          "hex": "#A21CAF",
+          "oklch": [
+            0.5180228389668582,
+            0.22580384113155022,
+            323.94867687488636
+          ],
+          "oklab": [
+            0.5180228389668582,
+            0.18256018292653292,
+            -0.13288775067549757
+          ],
+          "labD50": [
+            40.36107286400897,
+            64.13377167681209,
+            -47.4954806556031
+          ]
+        },
+        "primary.dark": {
+          "hex": "#F0ABFC",
+          "oklch": [
+            0.8330332046068054,
+            0.13219254251410872,
+            321.43372871683937
+          ],
+          "oklab": [
+            0.8330332046068054,
+            0.10335970989060816,
+            -0.08241139889404714
+          ],
+          "labD50": [
+            78.74244799564711,
+            35.81921823583883,
+            -30.11311945026247
+          ]
+        },
+        "mark.front": {
+          "hex": "#A21CAF",
+          "oklch": [
+            0.5180228389668582,
+            0.22580384113155022,
+            323.94867687488636
+          ],
+          "oklab": [
+            0.5180228389668582,
+            0.18256018292653292,
+            -0.13288775067549757
+          ],
+          "labD50": [
+            40.36107286400897,
+            64.13377167681209,
+            -47.4954806556031
+          ]
+        },
+        "mark.rear": {
+          "hex": "#E879F9",
+          "oklch": [
+            0.7477201332382566,
+            0.20697175549291627,
+            322.1604276501944
+          ],
+          "oklab": [
+            0.7477201332382566,
+            0.1634521167411483,
+            -0.12696737023604743
+          ],
+          "labD50": [
+            67.57880270014603,
+            57.16435925883495,
+            -45.795154807981135
+          ]
+        }
+      },
+      "contrast": {
+        "lightOnWhite": 6.322224336890827,
+        "darkOnBrandSurface": 10.902131683162882,
+        "normalTextMinimum": 4.5,
+        "lightPass": true,
+        "darkPass": true,
+        "roleScope": "Primary normal-text/link anchors only; not a complete UI, mark-recognition, or palette approval."
+      },
+      "nearestByRole": {
+        "primary.light": {
+          "deltaEOK": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 0.0918449394936676
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 10.25585148054012
+          }
+        },
+        "primary.dark": {
+          "deltaEOK": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 0.039940263546011545
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 6.8140340108212465
+          }
+        },
+        "mark.front": {
+          "deltaEOK": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 0.0918449394936676
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 10.25585148054012
+          }
+        },
+        "mark.rear": {
+          "deltaEOK": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 0.06829228660935484
+          },
+          "ciede2000": {
+            "existingProductId": "tracelinq",
+            "existingProductName": "TraceLinq",
+            "distance": 8.798742015420597
+          }
+        }
+      },
+      "closestAcrossSameRoles": {
+        "deltaEOK": {
+          "role": "primary.dark",
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "distance": 0.039940263546011545
+        },
+        "ciede2000": {
+          "role": "primary.dark",
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "distance": 6.8140340108212465
+        }
+      },
+      "comparisons": [
+        {
+          "existingProductId": "asklinq",
+          "existingProductName": "AskLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2951650303583976,
+              "ciede2000": 39.77962256725175,
+              "oklchDifference": {
+                "lightness": 0.007085062533426334,
+                "chroma": 0.13974838313639937,
+                "shortestHueAngleDegrees": 137.55730556694385
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#F0ABFC",
+              "existingHex": "#5EEAD4",
+              "deltaEOK": 0.24302647097613864,
+              "ciede2000": 44.03471202136865,
+              "oklchDifference": {
+                "lightness": 0.02184857554383446,
+                "chroma": 0.007117107565077774,
+                "shortestHueAngleDegrees": 140.36299073029122
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#0F766E",
+              "deltaEOK": 0.2951650303583976,
+              "ciede2000": 39.77962256725175,
+              "oklchDifference": {
+                "lightness": 0.007085062533426334,
+                "chroma": 0.13974838313639937,
+                "shortestHueAngleDegrees": 137.55730556694385
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#E879F9",
+              "existingHex": "#14B8A6",
+              "deltaEOK": 0.3141924069023707,
+              "ciede2000": 45.98926831309223,
+              "oklchDifference": {
+                "lightness": 0.04396746578220123,
+                "chroma": 0.08395335346587474,
+                "shortestHueAngleDegrees": 139.65790018273466
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "booklinq",
+          "existingProductName": "BookLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.26053054339605397,
+              "ciede2000": 46.91328356630485,
+              "oklchDifference": {
+                "lightness": 0.037260273389498,
+                "chroma": 0.08029863321886768,
+                "shortestHueAngleDegrees": 85.04884694893036
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#F0ABFC",
+              "existingHex": "#FBBF24",
+              "deltaEOK": 0.2611446186819614,
+              "ciede2000": 56.04056929414442,
+              "oklchDifference": {
+                "lightness": 0.003827370280643505,
+                "chroma": 0.03222902117379564,
+                "shortestHueAngleDegrees": 122.99489820026338
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#B45309",
+              "deltaEOK": 0.26053054339605397,
+              "ciede2000": 46.91328356630485,
+              "oklchDifference": {
+                "lightness": 0.037260273389498,
+                "chroma": 0.08029863321886768,
+                "shortestHueAngleDegrees": 85.04884694893036
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#E879F9",
+              "existingHex": "#F59E0B",
+              "deltaEOK": 0.30225406006420563,
+              "ciede2000": 57.27085657135655,
+              "oklchDifference": {
+                "lightness": 0.02087022598459143,
+                "chroma": 0.04231235443122805,
+                "shortestHueAngleDegrees": 107.91995876411784
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "visionlinq",
+          "existingProductName": "VisionLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.22218997561661027,
+              "ciede2000": 27.53783701666379,
+              "oklchDifference": {
+                "lightness": 0.029824525359609666,
+                "chroma": 0.00863836307698998,
+                "shortestHueAngleDegrees": 59.57237124785638
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#F0ABFC",
+              "existingHex": "#8AACF8",
+              "deltaEOK": 0.1444423309217007,
+              "ciede2000": 27.42373061202802,
+              "oklchDifference": {
+                "lightness": 0.08348142261820113,
+                "chroma": 0.015646139318397853,
+                "shortestHueAngleDegrees": 56.1501218346192
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#1D4ED8",
+              "deltaEOK": 0.22218997561661027,
+              "ciede2000": 27.53783701666379,
+              "oklchDifference": {
+                "lightness": 0.029824525359609666,
+                "chroma": 0.00863836307698998,
+                "shortestHueAngleDegrees": 59.57237124785638
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#E879F9",
+              "existingHex": "#60A5FA",
+              "deltaEOK": 0.20462639435436497,
+              "ciede2000": 38.11450532204789,
+              "oklchDifference": {
+                "lightness": 0.033980082647917076,
+                "chroma": 0.06359122069231668,
+                "shortestHueAngleDegrees": 67.53640324258521
+              }
+            }
+          }
+        },
+        {
+          "existingProductId": "tracelinq",
+          "existingProductName": "TraceLinq",
+          "byRole": {
+            "primary.light": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.0918449394936676,
+              "ciede2000": 10.25585148054012,
+              "oklchDifference": {
+                "lightness": 0.02250447827214208,
+                "chroma": 0.011066891775094206,
+                "shortestHueAngleDegrees": 22.02462198273662
+              }
+            },
+            "primary.dark": {
+              "candidateHex": "#F0ABFC",
+              "existingHex": "#D8B4FE",
+              "deltaEOK": 0.039940263546011545,
+              "ciede2000": 6.8140340108212465,
+              "oklchDifference": {
+                "lightness": 0.006274089677857475,
+                "chroma": 0.023963499250936257,
+                "shortestHueAngleDegrees": 15.051036655866426
+              }
+            },
+            "mark.front": {
+              "candidateHex": "#A21CAF",
+              "existingHex": "#7E22CE",
+              "deltaEOK": 0.0918449394936676,
+              "ciede2000": 10.25585148054012,
+              "oklchDifference": {
+                "lightness": 0.02250447827214208,
+                "chroma": 0.011066891775094206,
+                "shortestHueAngleDegrees": 22.02462198273662
+              }
+            },
+            "mark.rear": {
+              "candidateHex": "#E879F9",
+              "existingHex": "#C084FC",
+              "deltaEOK": 0.06829228660935484,
+              "ciede2000": 8.798742015420597,
+              "oklchDifference": {
+                "lightness": 0.02603474417444107,
+                "chroma": 0.03028333148334056,
+                "shortestHueAngleDegrees": 16.6566726495098
+              }
+            }
+          }
+        }
+      ],
+      "semanticComparisons": {
+        "primary.light": {
+          "context": "same_light_UI_foreground",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#A21CAF",
+              "ciede2000": 29.627010360972882,
+              "deltaEOK": 0.19418799165689987
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#A21CAF",
+              "ciede2000": 45.40939153601464,
+              "deltaEOK": 0.32461644485388375
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#A21CAF",
+              "ciede2000": 52.62213248677274,
+              "deltaEOK": 0.2784791453898992
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#A21CAF",
+              "ciede2000": 29.665007753072135,
+              "deltaEOK": 0.2119131398287281
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 29.627010360972882
+          }
+        },
+        "primary.dark": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#F0ABFC",
+              "ciede2000": 40.60905987928729,
+              "deltaEOK": 0.33899990580862416
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#F0ABFC",
+              "ciede2000": 52.19191738191767,
+              "deltaEOK": 0.41395456406841313
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#F0ABFC",
+              "ciede2000": 53.609077952016,
+              "deltaEOK": 0.3553322961304799
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#F0ABFC",
+              "ciede2000": 44.55985964033078,
+              "deltaEOK": 0.3811159257130138
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 40.60905987928729
+          }
+        },
+        "mark.rear": {
+          "context": "cross_context_only",
+          "values": [
+            {
+              "id": "deletion_error",
+              "label": "삭제/오류",
+              "hex": "#A94444",
+              "candidateHex": "#E879F9",
+              "ciede2000": 37.3115165125602,
+              "deltaEOK": 0.2905086420062408
+            },
+            {
+              "id": "addition_retained",
+              "label": "추가/유지",
+              "hex": "#287046",
+              "candidateHex": "#E879F9",
+              "ciede2000": 50.979459463240744,
+              "deltaEOK": 0.39960087139305833
+            },
+            {
+              "id": "warning",
+              "label": "주의",
+              "hex": "#98600C",
+              "candidateHex": "#E879F9",
+              "ciede2000": 55.140742168889744,
+              "deltaEOK": 0.33638573384290066
+            },
+            {
+              "id": "action_information",
+              "label": "동작/정보",
+              "hex": "#2455C5",
+              "candidateHex": "#E879F9",
+              "ciede2000": 39.92779417414533,
+              "deltaEOK": 0.3243055434492187
+            }
+          ],
+          "nearestByCIEDE2000": {
+            "semanticId": "deletion_error",
+            "label": "삭제/오류",
+            "distance": 37.3115165125602
+          }
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "label": "Color.js difference API",
+      "url": "https://colorjs.io/docs/color-difference"
+    },
+    {
+      "label": "Color.js 0.7.1 deltaEOK implementation",
+      "url": "https://github.com/color-js/color.js/blob/v0.7.1/src/deltaE/deltaEOK.js"
+    },
+    {
+      "label": "Color.js 0.7.1 CIEDE2000 implementation",
+      "url": "https://github.com/color-js/color.js/blob/v0.7.1/src/deltaE/deltaE2000.js"
+    },
+    {
+      "label": "Color.js 0.7.1 Lab D50 conversion",
+      "url": "https://github.com/color-js/color.js/blob/v0.7.1/src/spaces/lab.js"
+    },
+    {
+      "label": "Color.js contrast API",
+      "url": "https://colorjs.io/docs/contrast"
+    },
+    {
+      "label": "WCAG 2.2 contrast minimum",
+      "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum"
+    }
+  ],
+  "semanticContext": {
+    "productVersion": "GitLinq 0.2.2",
+    "sourceCommit": "8ec743108e3eca5c65d2407229c5f555a1fae73f",
+    "sourceFiles": [
+      "frontend/src/features/workspace/workspace.css",
+      "frontend/src/features/cancellationPreview/cancellationPreview.css"
+    ],
+    "colors": [
+      {
+        "id": "deletion_error",
+        "label": "삭제/오류",
+        "hex": "#A94444"
+      },
+      {
+        "id": "addition_retained",
+        "label": "추가/유지",
+        "hex": "#287046"
+      },
+      {
+        "id": "warning",
+        "label": "주의",
+        "hex": "#98600C"
+      },
+      {
+        "id": "action_information",
+        "label": "동작/정보",
+        "hex": "#2455C5"
+      }
+    ],
+    "interpretation": "primary.light comparisons share the current light-UI foreground context. primary.dark and mark.rear comparisons are cross-context information only, not direct UI-role collision decisions. DeltaE measures similarity, not semantic confusion probability.",
+    "approvalThreshold": null
+  },
+  "semanticMeasurementAddedAt": "2026-09-08T16:04:25.190Z",
+  "visualReview": {
+    "kind": "Independent observation of root-provided Chromium screenshots; not a human-recognition experiment.",
+    "files": [
+      "gitlinq-color-review-none.png",
+      "gitlinq-color-review-achromatopsia.png",
+      "gitlinq-color-review-protanopia.png",
+      "gitlinq-color-review-deuteranopia.png",
+      "gitlinq-color-review-tritanopia.png"
+    ],
+    "observations": [
+      "Normal: orange resembles BookLinq and magenta resembles TraceLinq; cyan is adjacent to AskLinq teal.",
+      "Protanopia/deuteranopia: magenta approaches the VisionLinq/TraceLinq blue appearance; lime and orange approach BookLinq yellow/olive.",
+      "Tritanopia: cyan and AskLinq both appear very similar teal, while rose/orange approach the red semantic region.",
+      "Grayscale: all candidates and existing products lose hue identity; no unique color-only 16px recognition guarantee is justified."
+    ],
+    "scopeLimit": "Comparative visual observations, not universal perception guarantees or quantified CVD/16px pass results."
+  },
+  "recommendation": {
+    "status": "hold_final_allocation",
+    "reason": "No candidate has yet demonstrated the full original all-active-products normal/grayscale/CVD 16px distinction gate. Relative color distance and AA results cannot replace semantic review, visible product names, and an accepted allocation record.",
+    "priorityForFurtherReview": "cyan",
+    "priorityBasis": "Of these five, cyan is less suggestive of deletion/error and addition/success in the normal UI and is a useful next candidate for application-context review; its AskLinq tritanopia similarity remains unresolved. This is not palette approval.",
+    "notClaimed": [
+      "all_conditions_pass",
+      "grayscale_color_only_unique_identity",
+      "official_P05_color_assigned"
+    ]
+  },
+  "subsequentAllocationRecord": "../allocations/gitlinq.md",
+  "historicalEvidenceNote": "This measurement and independent review preceded the final allocation. Its hold recommendation describes that earlier point in time; see the subsequent allocation record for the selected palette, revised context-based recognition gate, and unresolved limitations."
+}

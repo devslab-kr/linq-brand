@@ -8,7 +8,7 @@ import { unzipSync, strFromU8 } from "fflate";
 
 const root = new URL("../", import.meta.url);
 const dist = new URL("dist/", root);
-const products = ["asklinq", "booklinq", "tracelinq", "visionlinq"];
+const products = ["asklinq", "booklinq", "gitlinq", "tracelinq", "visionlinq"];
 
 function sha256(buffer) {
   return createHash("sha256").update(buffer).digest("hex");
@@ -41,6 +41,7 @@ test("creates deterministic product download archives", async () => {
     assert.ok(files["checksums.json"]);
     assert.match(strFromU8(files["README.txt"]), /devslab\.kr\/brand\/products/);
     assert.ok(files["BRAND-LICENSE.md"]);
+    assert.equal(JSON.parse(strFromU8(files["manifest.json"])).id, product);
   }
 });
 

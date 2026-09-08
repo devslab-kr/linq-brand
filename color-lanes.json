@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "single-hue",
+  "maxSingleHueLanes": 8,
+  "lanes": [
+    { "colorId": "P01", "name": { "ko": "청록", "en": "Teal" }, "status": "active", "productId": "asklinq", "primary": { "light": "#0F766E", "dark": "#5EEAD4" }, "mark": { "rear": "#14B8A6", "front": "#0F766E" } },
+    { "colorId": "P02", "name": { "ko": "앰버", "en": "Amber" }, "status": "active", "productId": "booklinq", "primary": { "light": "#B45309", "dark": "#FBBF24" }, "mark": { "rear": "#F59E0B", "front": "#B45309" } },
+    { "colorId": "P03", "name": { "ko": "블루", "en": "Blue" }, "status": "active", "productId": "visionlinq", "primary": { "light": "#1D4ED8", "dark": "#8AACF8" }, "mark": { "rear": "#60A5FA", "front": "#1D4ED8" } },
+    { "colorId": "P04", "name": { "ko": "바이올렛", "en": "Violet" }, "status": "active", "productId": "tracelinq", "primary": { "light": "#7E22CE", "dark": "#D8B4FE" }, "mark": { "rear": "#C084FC", "front": "#7E22CE" } },
+    { "colorId": "P05", "name": { "ko": "라임", "en": "Lime" }, "status": "active", "productId": "gitlinq", "primary": { "light": "#3F6212", "dark": "#BEF264" }, "mark": { "rear": "#A3E635", "front": "#3F6212" } },
+    { "colorId": "P06", "name": { "ko": "로즈", "en": "Rose" }, "status": "reserved", "productId": null, "primary": { "light": "#BE123C", "dark": "#FDA4AF" }, "mark": { "rear": "#FB7185", "front": "#BE123C" } },
+    { "colorId": "P07", "name": { "ko": "시안", "en": "Cyan" }, "status": "reserved", "productId": null, "primary": { "light": "#0E7490", "dark": "#67E8F9" }, "mark": { "rear": "#22D3EE", "front": "#0E7490" } },
+    { "colorId": "P08", "name": { "ko": "마젠타", "en": "Magenta" }, "status": "reserved", "productId": null, "primary": { "light": "#A21CAF", "dark": "#F0ABFC" }, "mark": { "rear": "#E879F9", "front": "#A21CAF" } }
+  ]
+}

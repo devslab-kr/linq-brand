@@ -8,6 +8,7 @@ const products = [
   ["BookLinq", "booklinq", "#F59E0B", "#B45309"],
   ["VisionLinq", "visionlinq", "#60A5FA", "#1D4ED8"],
   ["TraceLinq", "tracelinq", "#C084FC", "#7E22CE"],
+  ["GitLinq", "gitlinq", "#A3E635", "#3F6212"],
 ].map(([name, id, rear, front]) => ({
   name,
   id,

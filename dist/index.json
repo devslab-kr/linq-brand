@@ -50,6 +50,33 @@
     }
   },
   {
+    "id": "gitlinq",
+    "name": "GitLinq",
+    "colorId": "P05",
+    "status": "active",
+    "meaning": "version control, selective undo, team collaboration",
+    "primary": {
+      "light": "#3F6212",
+      "dark": "#BEF264"
+    },
+    "mark": {
+      "rear": "#A3E635",
+      "front": "#3F6212"
+    },
+    "hueLane": "Lime",
+    "allocationRecord": "https://github.com/devslab-kr/linq-brand/blob/v0.2.0/docs/allocations/gitlinq.md",
+    "assets": {
+      "mark-color": "./gitlinq/mark-color.svg",
+      "mark-dark": "./gitlinq/mark-dark.svg",
+      "mark-monochrome": "./gitlinq/mark-monochrome.svg",
+      "mark-reversed": "./gitlinq/mark-reversed.svg",
+      "favicon": "./gitlinq/favicon.svg",
+      "wordmark": "./gitlinq/wordmark.svg",
+      "lockup-horizontal": "./gitlinq/lockup-horizontal.svg",
+      "lockup-stacked": "./gitlinq/lockup-stacked.svg"
+    }
+  },
+  {
     "id": "tracelinq",
     "name": "TraceLinq",
     "colorId": "P04",

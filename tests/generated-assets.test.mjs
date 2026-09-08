@@ -4,13 +4,26 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 import sharp from "sharp";
+import { validateSvg } from "../src/validation.mjs";
 
 const dist = new URL("../dist/", import.meta.url);
-const products = ["asklinq", "booklinq", "tracelinq", "visionlinq"];
+const products = ["asklinq", "booklinq", "gitlinq", "tracelinq", "visionlinq"];
 
 async function metadata(product, fileName) {
   return sharp(fileURLToPath(new URL(`${product}/${fileName}`, dist))).metadata();
 }
+
+test("generates a family social image containing every approved product lockup", async () => {
+  const svg = await readFile(new URL("og-family.svg", dist), "utf8");
+  assert.deepEqual([...svg.matchAll(/aria-label="([A-Za-z]+Linq)"/g)].map((match) => match[1]), [
+    "AskLinq", "BookLinq", "VisionLinq", "TraceLinq", "GitLinq",
+  ]);
+  assert.doesNotMatch(svg, /<text|font-family/);
+  assert.deepEqual(validateSvg("og-family.svg", svg), []);
+  const image = await sharp(fileURLToPath(new URL("og-family.png", dist))).metadata();
+  assert.equal(image.width, 1200);
+  assert.equal(image.height, 630);
+});
 
 test("generates exact transparent mark sizes", async () => {
   for (const product of products) {

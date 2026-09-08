@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { loadProducts, validateRegistry } from "../src/registry.mjs";
 
-test("loads the approved initial Linq product registry", async () => {
+test("loads the approved Linq product registry with permanent Color IDs", async () => {
   const products = await loadProducts(new URL("../products/", import.meta.url));
 
   assert.deepEqual(
@@ -11,6 +11,7 @@ test("loads the approved initial Linq product registry", async () => {
     [
       ["asklinq", "P01"],
       ["booklinq", "P02"],
+      ["gitlinq", "P05"],
       ["tracelinq", "P04"],
       ["visionlinq", "P03"],
     ],

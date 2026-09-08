@@ -1,6 +1,6 @@
 {
   "name": "@devslab/linq-brand",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Official public assets and registry for the DevsLab Linq product family",
   "homepage": "https://github.com/devslab-kr/linq-brand#readme",
   "bugs": {
@@ -25,6 +25,7 @@
   ],
   "exports": {
     "./registry": "./dist/index.json",
+    "./color-lanes": "./dist/color-lanes.json",
     "./tokens.css": "./dist/tokens.css",
     "./assets/*": "./dist/*"
   },

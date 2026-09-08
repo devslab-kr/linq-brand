@@ -7,7 +7,7 @@ const FONT_URL = new URL(
   import.meta.url,
 );
 const FONT = openSync(fileURLToPath(FONT_URL));
-const CANONICAL_NAMES = new Set(["AskLinq", "BookLinq", "VisionLinq", "TraceLinq"]);
+const CANONICAL_NAMES = new Set(["AskLinq", "BookLinq", "VisionLinq", "TraceLinq", "GitLinq"]);
 const TRACKING = -25;
 const DISPLAY_CAP_HEIGHT = 20;
 

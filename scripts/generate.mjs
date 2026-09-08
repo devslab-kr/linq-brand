@@ -7,6 +7,7 @@ import pngToIco from "png-to-ico";
 import sharp from "sharp";
 
 import { buildColorMark, buildMonochromeMark } from "../src/geometry.mjs";
+import { validateColorLanes } from "../src/color-lanes.mjs";
 import { loadProducts, validateRegistry } from "../src/registry.mjs";
 import { buildLockup, buildWordmarkSvg } from "../src/wordmark.mjs";
 
@@ -16,7 +17,9 @@ const distUrl = new URL("dist/", root);
 const downloadsUrl = new URL("downloads/", distUrl);
 
 const products = await loadProducts(productsUrl);
-const registryErrors = validateRegistry(products);
+const colorLanesSource = await readFile(new URL("color-lanes.json", root), "utf8");
+const colorLanes = JSON.parse(colorLanesSource);
+const registryErrors = [...validateRegistry(products), ...validateColorLanes(colorLanes, products)];
 if (registryErrors.length > 0) {
   throw new Error(`Invalid product registry:\n${registryErrors.join("\n")}`);
 }
@@ -47,6 +50,23 @@ function ogSvg(product) {
   );
 }
 
+function familyOgSvg(products) {
+  const ordered = [...products].sort((left, right) => left.colorId.localeCompare(right.colorId));
+  const columns = 3;
+  const rows = Math.ceil(ordered.length / columns);
+  const lockups = ordered.map((product, index) => {
+    const row = Math.floor(index / columns);
+    const rowCount = Math.min(columns, ordered.length - row * columns);
+    const column = index % columns;
+    const x = (1200 - rowCount * 360) / 2 + column * 360 + 20;
+    const y = 60 + (row + 0.5) * (510 / rows) - 50;
+    const source = buildLockup(product, "horizontal");
+    const [, viewBox] = source.match(/viewBox="([^"]+)"/);
+    return `<svg x="${x}" y="${y}" width="320" height="100" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-label="${product.name}">${innerSvg(source)}</svg>`;
+  }).join("");
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" color="#09090B"><title>Linq Product Family</title><rect width="1200" height="630" fill="#FFFFFF"/>${lockups}</svg>\n`;
+}
+
 async function writePng(svg, outputUrl, width, height = width) {
   await sharp(svg, { density: 384 })
     .resize(width, height, { fit: "fill" })
@@ -73,7 +93,8 @@ async function writeDownload(product, productUrl) {
   entries["README.txt"] = strToU8(
     `${product.name} official brand assets\nCanonical guidance: https://devslab.kr/brand/products\n`,
   );
-  entries["BRAND-LICENSE.md"] = await readFile(new URL("BRAND-LICENSE.md", root));
+  // Git may check this text file out with CRLF on Windows; ZIP bytes use canonical LF.
+  entries["BRAND-LICENSE.md"] = strToU8((await readFile(new URL("BRAND-LICENSE.md", root), "utf8")).replaceAll("\r\n", "\n"));
   entries["manifest.json"] = strToU8(`${JSON.stringify(product, null, 2)}\n`);
   const sortedEntries = Object.fromEntries(Object.entries(entries).sort(([left], [right]) => left.localeCompare(right)));
   const archive = zipSync(sortedEntries, { level: 9, mtime: new Date(1980, 0, 1, 0, 0, 0) });
@@ -141,7 +162,11 @@ for (const product of products) {
 }
 
 tokenLines.push("}", "");
+const familySvg = familyOgSvg(products);
+await writeFile(new URL("og-family.svg", distUrl), familySvg, "utf8");
+await writePng(Buffer.from(familySvg), new URL("og-family.png", distUrl), 1200, 630);
 await writeFile(new URL("index.json", distUrl), `${JSON.stringify(registry, null, 2)}\n`, "utf8");
+await writeFile(new URL("color-lanes.json", distUrl), colorLanesSource, "utf8");
 await writeFile(new URL("tokens.css", distUrl), tokenLines.join("\n"), "utf8");
 await writeFile(
   new URL("checksums.json", downloadsUrl),
