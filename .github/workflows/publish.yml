@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # npm >= 11.5.1 is required for OIDC trusted publishing; older Node bundles npm 10
           cache: npm
           registry-url: https://registry.npmjs.org
 
@@ -50,7 +50,8 @@ jobs:
       - run: npm test
       - run: npm run pack:check
 
+      # Auth is npm Trusted Publishing (OIDC): npm trusts this repo +
+      # workflow file through `id-token: write`, so there is no NPM_TOKEN.
+      # A token in NODE_AUTH_TOKEN would take precedence and bypass OIDC.
       - name: Publish to npm
         run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
